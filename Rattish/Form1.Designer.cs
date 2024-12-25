@@ -35,7 +35,6 @@
             panel1 = new Panel();
             addTrackBtn = new Button();
             keyWarning = new Label();
-            getNextAnimal = new Button();
             setName = new Button();
             label1 = new Label();
             textBox1 = new TextBox();
@@ -81,7 +80,6 @@
             panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(addTrackBtn);
             panel1.Controls.Add(keyWarning);
-            panel1.Controls.Add(getNextAnimal);
             panel1.Controls.Add(setName);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textBox1);
@@ -115,16 +113,6 @@
             keyWarning.Size = new Size(194, 82);
             keyWarning.TabIndex = 5;
             keyWarning.Text = "No warnings.";
-            // 
-            // getNextAnimal
-            // 
-            getNextAnimal.Location = new Point(17, 187);
-            getNextAnimal.Name = "getNextAnimal";
-            getNextAnimal.Size = new Size(170, 23);
-            getNextAnimal.TabIndex = 12;
-            getNextAnimal.Text = "Next Animal";
-            getNextAnimal.UseVisualStyleBackColor = true;
-            getNextAnimal.Click += nextAnimal;
             // 
             // setName
             // 
@@ -295,7 +283,6 @@
         private ListBox PreviewBox;
         private Button viewArray;
         private Button setName;
-        private Button getNextAnimal;
         private Label lettersList;
         private Button addTrackBtn;
         private Panel panel2;

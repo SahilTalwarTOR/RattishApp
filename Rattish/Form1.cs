@@ -31,7 +31,6 @@ namespace Rattish
             this.keyPair = new BindingList<string>(); // We'll use this for setting up the key-pairs
             PreviewBox.DataSource = this.keyPair;
             saveData.Enabled = false;
-            getNextAnimal.Enabled = false;
             this.nameFocused = false;
 
             lettersList.AutoSize = false; // Disable AutoSize to control dimensions
@@ -41,6 +40,7 @@ namespace Rattish
 
         private void videoTag_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Make sure for each video you set a new animal name.\n\nThis is not an error", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             OpenFileDialog ofd = new OpenFileDialog();
 
             ofd.InitialDirectory = Environment.ExpandEnvironmentVariables(@"%userprofile%\downloads\");
@@ -297,11 +297,6 @@ namespace Rattish
             }
         }
 
-        private void nextAnimal(object sender, EventArgs e)
-        {
-            textBox1.Enabled = true;
-            setName.Enabled = true;
-        }
 
         private void nameEnter(object sender, EventArgs e)
         {
