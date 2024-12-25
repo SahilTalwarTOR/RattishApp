@@ -79,6 +79,13 @@ namespace Rattish
                 return;
             }
 
+            if (this.AnimalName == "" || this.AnimalName == " " || this.AnimalName == null)
+            {
+                MessageBox.Show("No animal name has been entered. Enter an animal name & click Set Animal Name to begin");
+                return;
+            }
+
+
             if (letters.Contains(e.KeyCode)) // Ensure it's a valid key
             {
                 if (!clicked || e.KeyCode != savedKey) // New key pressed or no active key
