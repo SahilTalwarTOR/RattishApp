@@ -18,8 +18,8 @@ namespace Rattish
         TimeSpan baseTimeSpan = TimeSpan.FromMinutes(5);
         bool clicked = false;
         BindingList<string> keyPair;
-        ArrayList stupidFuckingArray = new ArrayList();
-        int counter = 0; // I genuinely FUCKING hate this implementation
+        ArrayList timeStampArray = new ArrayList();
+        int counter = 0;
         bool ready = false; // Is the program ready?
         private string AnimalName;
         bool nameFocused;
@@ -99,7 +99,7 @@ namespace Rattish
                         string totalTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
                         timeSince.Text = "Key Held For: " + totalTime;
                         double endStamp = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-                        this.keyPair.Add(savedKey.ToString() + " | " + DateTime.Now.ToString() + " | " + totalTime + " | " + stupidFuckingArray[counter] + " | " + endStamp + " | " + this.AnimalName);
+                        this.keyPair.Add(savedKey.ToString() + " | " + DateTime.Now.ToString() + " | " + totalTime + " | " + timeStampArray[counter] + " | " + endStamp + " | " + this.AnimalName);
                         counter++;
                     }
 
@@ -115,7 +115,7 @@ namespace Rattish
                     updateTimer.Interval = 10;
                     updateTimer.Tick += new EventHandler(UpdateTimer);
                     updateTimer.Start();
-                    stupidFuckingArray.Add(timestamp);
+                    timeStampArray.Add(timestamp);
                 }
                 else if (e.KeyCode == savedKey) // Same key pressed again
                 {
@@ -126,7 +126,7 @@ namespace Rattish
                     string totalTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
                     timeSince.Text = "Key Held For: " + totalTime;
                     double endStamp = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
-                    this.keyPair.Add(savedKey.ToString() + " | " + DateTime.Now.ToString() + " | " + totalTime + " | " + stupidFuckingArray[counter] + " | " + endStamp + " | " + this.AnimalName);
+                    this.keyPair.Add(savedKey.ToString() + " | " + DateTime.Now.ToString() + " | " + totalTime + " | " + timeStampArray[counter] + " | " + endStamp + " | " + this.AnimalName);
                     counter++;
 
                     // Indicate stopped state
