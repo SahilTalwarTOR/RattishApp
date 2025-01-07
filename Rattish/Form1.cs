@@ -353,5 +353,47 @@ namespace Rattish
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e) // This is supposed to be what happens when we hit 0.5x
+        {
+            axWindowsMediaPlayer1.settings.rate = 0.5; // Slow it down by 0.5
+            passTime(0.5);
+
+        }
+
+        private void speedUp(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.rate = 1.5;
+            passTime(1.5);
+
+        }
+
+        private void regularSpeed(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.rate = 1.0; // Normalize!
+            passTime(1.0);
+        }
+
+        private void passTime(double time)
+        {
+            // Method will just update the time appropriately in the titlebox
+           switch(time)
+            {
+                case 1.0:
+                    updateLabel("Video Speed: Regular", timeLabel);
+                    break;
+                case 0.5:
+                    updateLabel("Video Speed: Slow", timeLabel);
+                    break;
+                case 1.5:
+                    updateLabel("Video Speed: Faster", timeLabel);
+                    break;                       
+            }
+        }
+
+        private void updateLabel(string text, Label label)
+        {
+            label.Text = text;
+        }
     }
 }

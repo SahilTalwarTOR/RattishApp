@@ -33,6 +33,10 @@
             videoSelect = new Button();
             videoTag = new Label();
             panel1 = new Panel();
+            SpeedLabel = new Label();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             addTrackBtn = new Button();
             keyWarning = new Label();
             setName = new Button();
@@ -49,6 +53,7 @@
             panel2 = new Panel();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             versionLabel = new Label();
+            timeLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel2.SuspendLayout();
@@ -78,6 +83,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(SpeedLabel);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(addTrackBtn);
             panel1.Controls.Add(keyWarning);
             panel1.Controls.Add(setName);
@@ -94,6 +103,45 @@
             panel1.Size = new Size(200, 474);
             panel1.TabIndex = 3;
             // 
+            // SpeedLabel
+            // 
+            SpeedLabel.AutoSize = true;
+            SpeedLabel.Location = new Point(69, 195);
+            SpeedLabel.Name = "SpeedLabel";
+            SpeedLabel.Size = new Size(72, 15);
+            SpeedLabel.TabIndex = 16;
+            SpeedLabel.Text = "Video Speed";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(17, 242);
+            button3.Name = "button3";
+            button3.Size = new Size(170, 23);
+            button3.TabIndex = 15;
+            button3.Text = "1x (NORMAL SPEED)";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += regularSpeed;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(106, 213);
+            button2.Name = "button2";
+            button2.Size = new Size(81, 23);
+            button2.TabIndex = 14;
+            button2.Text = "1.5x (Fast)";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += speedUp;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(17, 213);
+            button1.Name = "button1";
+            button1.Size = new Size(83, 23);
+            button1.TabIndex = 11;
+            button1.Text = "0.5x (Slow)";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // addTrackBtn
             // 
             addTrackBtn.Location = new Point(17, 383);
@@ -107,7 +155,7 @@
             // keyWarning
             // 
             keyWarning.ForeColor = Color.Red;
-            keyWarning.Location = new Point(3, 251);
+            keyWarning.Location = new Point(0, 286);
             keyWarning.MaximumSize = new Size(0, 100);
             keyWarning.Name = "keyWarning";
             keyWarning.Size = new Size(194, 82);
@@ -127,7 +175,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(61, 109);
+            label1.Location = new Point(61, 111);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 8;
@@ -241,11 +289,21 @@
             versionLabel.TabIndex = 10;
             versionLabel.Text = "Version: 1.1";
             // 
+            // timeLabel
+            // 
+            timeLabel.AutoSize = true;
+            timeLabel.Location = new Point(877, 486);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(118, 15);
+            timeLabel.TabIndex = 11;
+            timeLabel.Text = "Video Speed: Regular";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1213, 641);
+            Controls.Add(timeLabel);
             Controls.Add(versionLabel);
             Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(panel2);
@@ -288,5 +346,10 @@
         private Panel panel2;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private Label versionLabel;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Label SpeedLabel;
+        private Label timeLabel;
     }
 }
